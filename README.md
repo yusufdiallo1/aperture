@@ -107,18 +107,18 @@ Twenty-three creative effects, in Portrait and Cinematic:
 | **Multiply** | Army, Crowd, Kaleidoscope, Mirror |
 | **Distort** | Bulge, Pinch, Twirl, Fisheye |
 | **Stylize** | X-Ray, Comic, Edges, Posterize, Thermal, Night Vision |
-| **Illustrated** | Anime, Cartoon, Sketch, Watercolour |
+| **Illustrated** | Soft Ink, Cartoon, Sketch, Watercolour |
 | **Retro** | CRT, Halftone, Crystal, Pixels, Dream |
 
 They appear live in the viewfinder, not only on the saved file, and they clear
 themselves when you leave Portrait or Cinematic so an effect can never stay
 applied somewhere you cannot switch it off.
 
-**On Anime and Cartoon.** These are *stylisations* built from smoothing,
-posterisation and edge detection — they flatten and outline the real frame.
-They are not the neural redrawing that turns a face into a drawn character;
-that needs a trained model rather than a filter chain, and this app does not
-ship one.
+**These are stylisations, not redrawings.** They flatten and outline the real
+frame using smoothing, posterisation and edge detection. Turning a face into a
+drawn character needs a trained neural model rather than a filter chain, and
+this app does not ship one — so nothing here is named for a look it cannot
+actually produce.
 
 ## Screen recording
 
