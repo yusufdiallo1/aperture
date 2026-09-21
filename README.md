@@ -51,6 +51,18 @@ Everything runs on your machine. **No account, no server, no network calls, no
 telemetry.** The app has never made an outbound connection and does not contain
 the code to make one.
 
+## At a glance
+
+| | |
+| --- | --- |
+| **Six modes** | Photo · Video · Time Lapse · Slo-Mo · Portrait · Cinematic |
+| **Screen** | Whole display or a single window, with system audio |
+| **Effects** | 23 across five groups, live in the viewfinder |
+| **Editing** | Crop, rotate, grade, trim, clean up speech — all non-destructive |
+| **Storage** | Straight into Photos, add-only permission |
+| **Profiles** | Several people per Mac, no server, no passwords |
+| **Widgets** | Shot count, recent captures, mode shortcuts |
+
 ## Capture modes
 
 | Mode | What it does |
@@ -147,13 +159,16 @@ tails off words and sounds worse than the noise it removes.
 
 ## Widgets
 
-Three, in the desktop widget gallery once the app has been opened once.
+Three, in the desktop widget gallery. **Open Camera once first** — macOS only
+registers a widget extension after its host app has run.
 
 | Widget | Shows |
 | --- | --- |
 | **Shot Count** | How much you have captured; opens the camera |
 | **Recent Captures** | Your latest thumbnails; opens the library |
 | **Camera Modes** | Buttons that open a specific mode |
+
+To add one: right-click the desktop → **Edit Widgets** → search **Camera**.
 
 A widget cannot show a live viewfinder, and no app's can — macOS renders
 widgets as still snapshots on a schedule rather than running views. These show
