@@ -56,12 +56,15 @@ the code to make one.
 | | |
 | --- | --- |
 | **Six modes** | Photo · Video · Time Lapse · Slo-Mo · Portrait · Cinematic |
+| **Burst** | Hold the shutter for a run of frames |
+| **Live Photos** | A still plus the moment around it |
 | **Screen** | Whole display or a single window, with system audio |
 | **Effects** | 23 across five groups, live in the viewfinder |
 | **Editing** | Crop, rotate, grade, trim, clean up speech — all non-destructive |
 | **Storage** | Straight into Photos, add-only permission |
 | **Profiles** | Several people per Mac, no server, no passwords |
 | **Widgets** | Shot count, recent captures, mode shortcuts |
+| **Shortcuts** | ⌥⌘C to capture, ⌥⌘R for the recorder, from anywhere |
 
 ## Capture modes
 
@@ -73,6 +76,20 @@ the code to make one.
 | **Slo-Mo** | Synthesised slow motion at 2×, 4× or 8× |
 | **Portrait** | Subject separation with background blur |
 | **Cinematic** | Portrait plus a focus pull between detected faces |
+
+### Burst and Live Photos
+
+**Hold the shutter** for a burst. A counter appears in the button and a ring
+around it; release to keep the run. A hold shorter than a quarter second counts
+as an ordinary tap, because holding the mouse down briefly is how people click.
+
+**Live Photos** save a still plus a short clip of the moment around it — the
+window runs continuously, so the clip covers the seconds *before* the shutter as
+well as after. Turn it on with the LIVE control or in Settings.
+
+Apple's own Live Photo format pairs its two files through metadata that only
+Photos writes. Rather than imitate that, Camera saves a still and a clip and
+says that is what they are.
 
 ### About Portrait, Cinematic and Slo-Mo
 
@@ -131,6 +148,19 @@ should trust.
 When a recording finishes, the clip appears for a few seconds with an Edit
 button, then clears itself.
 
+## Shortcuts
+
+| | |
+| --- | --- |
+| `⌥⌘C` | Capture |
+| `⌥⌘R` | Open the screen recorder |
+
+Both work system-wide, without Camera in front. That matters most for screen
+recording: stopping a recording by clicking back into the app puts that click in
+the footage.
+
+Switchable off in Settings › Shortcuts.
+
 ## Editing
 
 Non-destructive throughout. Every export writes a **new file**; the original is
@@ -147,6 +177,15 @@ tells an already-good photo that it is already good.
 
 **Videos** — trim by time range, colour grade with the same controls, and clean
 up the audio.
+
+**Batch export** — select several captures in the Library, apply one grade, and
+write them wherever you choose. Existing files are never overwritten; a batch
+that quietly replaces an earlier one is how work disappears.
+
+**Framing aids** — a rule-of-thirds grid, a centre guide, and an optional box
+around detected faces so you know you are in shot before the timer fires. The
+timer ticks audibly, which matters when you are looking at the camera rather
+than the screen.
 
 ### Audio cleanup
 
