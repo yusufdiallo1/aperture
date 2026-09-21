@@ -7,7 +7,7 @@
 ### Install
 
 ```bash
-brew install --cask yusufdiallo1/tap/camera
+brew install --cask yusufdiallo1/tap/cam
 ```
 
 **or [⬇ download the DMG](../../releases/latest)**
@@ -85,6 +85,28 @@ Anything the hardware cannot do — flash, depth capture, Night Mode — appears
 in Settings under "Not available on this Mac", with the reason. Controls that
 cannot work are dimmed and explain themselves rather than sitting there looking
 live.
+
+## Effects
+
+Twenty-three creative effects, in Portrait and Cinematic:
+
+| Group | Effects |
+| --- | --- |
+| **Multiply** | Army, Crowd, Kaleidoscope, Mirror |
+| **Distort** | Bulge, Pinch, Twirl, Fisheye |
+| **Stylize** | X-Ray, Comic, Edges, Posterize, Thermal, Night Vision |
+| **Illustrated** | Anime, Cartoon, Sketch, Watercolour |
+| **Retro** | CRT, Halftone, Crystal, Pixels, Dream |
+
+They appear live in the viewfinder, not only on the saved file, and they clear
+themselves when you leave Portrait or Cinematic so an effect can never stay
+applied somewhere you cannot switch it off.
+
+**On Anime and Cartoon.** These are *stylisations* built from smoothing,
+posterisation and edge detection — they flatten and outline the real frame.
+They are not the neural redrawing that turns a face into a drawn character;
+that needs a trained model rather than a filter chain, and this app does not
+ship one.
 
 ## Screen recording
 
@@ -165,7 +187,7 @@ If you decline, captures go to the folder alone and everything still works.
 Easiest is Homebrew, which clears the quarantine flag for you:
 
 ```bash
-brew install --cask yusufdiallo1/tap/camera
+brew install --cask yusufdiallo1/tap/cam
 ```
 
 Otherwise download the DMG from **[Releases](../../releases/latest)**, open it,
@@ -195,7 +217,7 @@ Apple frameworks only. **No third-party dependencies, no API keys, nothing to
 sign up for.**
 
 AVFoundation · ScreenCaptureKit · Core Image · Vision · Photos · SwiftUI ·
-AppKit · Accelerate · ImageIO
+AppKit · Accelerate · ImageIO · WidgetKit
 
 ## Troubleshooting
 
@@ -217,6 +239,8 @@ Its last line is where things stopped.
 
 - **Not notarized**, hence the right-click-to-open step. Notarization needs a
   paid Apple Developer account.
+- **Time Lapse and Slo-Mo record no audio.** Their footage no longer runs at
+  real time, so real-time sound would drift against the picture immediately.
 - **Apple silicon only.** Adding Intel is a one-line change to the build script
   but has not been tested.
 
