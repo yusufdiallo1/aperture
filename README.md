@@ -4,9 +4,17 @@
 
 <br>
 
-**[⬇ Download](../../releases/latest)**
+### Install
+
+```bash
+brew install --cask yusufdiallo1/tap/camera
+```
+
+**or [⬇ download the DMG](../../releases/latest)**
 &nbsp;·&nbsp;
-**[📖 Setup guide](docs/SETUP.md)**
+[📖 setup guide](docs/SETUP.md)
+
+<sub>Homebrew clears the quarantine flag for you, so there is no right-click dance.</sub>
 
 <br>
 
@@ -154,8 +162,14 @@ If you decline, captures go to the folder alone and everything still works.
 
 ## Installing
 
-Download the DMG from **[Releases](../../releases/latest)**, open it, and drag
-Camera to Applications.
+Easiest is Homebrew, which clears the quarantine flag for you:
+
+```bash
+brew install --cask yusufdiallo1/tap/camera
+```
+
+Otherwise download the DMG from **[Releases](../../releases/latest)**, open it,
+and drag Camera to Applications.
 
 **If the DMG will not open**, macOS has quarantined it — everything downloaded
 from a browser gets that flag, and a quarantined disk image will not open

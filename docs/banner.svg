@@ -1,81 +1,121 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 200" width="880" height="200" role="img" aria-label="Camera — a camera for the Mac, wearing the iPhone's interface">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 260" width="880" height="260" role="img" aria-label="Camera — a camera for the Mac, wearing the iPhone's interface">
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#1F1F22"/>
-      <stop offset="100%" stop-color="#0B0B0D"/>
+    <linearGradient id="bg" x1="0" y1="0" x2="0.35" y2="1">
+      <stop offset="0%" stop-color="#232327"/>
+      <stop offset="60%" stop-color="#121215"/>
+      <stop offset="100%" stop-color="#08080A"/>
     </linearGradient>
     <radialGradient id="glow" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#FFD629" stop-opacity="0.22"/>
+      <stop offset="0%" stop-color="#FFD629" stop-opacity="0.26"/>
+      <stop offset="60%" stop-color="#FFD629" stop-opacity="0.05"/>
       <stop offset="100%" stop-color="#FFD629" stop-opacity="0"/>
     </radialGradient>
-    <linearGradient id="body" x1="0.3" y1="0" x2="0.7" y2="1">
-      <stop offset="0%" stop-color="#3A3A3F"/>
-      <stop offset="100%" stop-color="#151518"/>
+    <linearGradient id="body" x1="0.25" y1="0" x2="0.75" y2="1">
+      <stop offset="0%" stop-color="#44444B"/>
+      <stop offset="55%" stop-color="#232328"/>
+      <stop offset="100%" stop-color="#121215"/>
     </linearGradient>
+    <radialGradient id="dome" cx="35%" cy="28%" r="75%">
+      <stop offset="0%" stop-color="#8FB4D8" stop-opacity="0.45"/>
+      <stop offset="45%" stop-color="#3A4A5C" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0.5"/>
+    </radialGradient>
   </defs>
 
-  <rect width="880" height="200" fill="url(#bg)"/>
-  <ellipse cx="118" cy="100" rx="150" ry="110" fill="url(#glow)"/>
+  <rect width="880" height="260" fill="url(#bg)"/>
+  <ellipse cx="124" cy="130" rx="165" ry="130" fill="url(#glow)"/>
 
-  <!-- Aperture mark -->
-  <g transform="translate(118 100)">
-    <circle r="46" fill="url(#body)" stroke="#000" stroke-width="2"/>
-    <circle r="36" fill="none" stroke="#0A0A0C" stroke-width="7"/>
-    <circle r="32" fill="none" stroke="#FFFFFF" stroke-opacity="0.06" stroke-width="1"/>
-    <g fill="#4A4A52">
-      <!-- Nine blades, fanning around the opening -->
+  <!-- Aperture -->
+  <g transform="translate(124 130)">
+    <circle r="54" fill="url(#body)" stroke="#000" stroke-width="2.5"/>
+    <circle r="43" fill="none" stroke="#08080A" stroke-width="8"/>
+    <circle r="38" fill="none" stroke="#FFFFFF" stroke-opacity="0.07" stroke-width="1"/>
+
+    <!-- Blades, opening and closing -->
+    <g fill="#52525C">
       <g>
-        <path d="M0,-30 L21,-21 L8,-8 Z"/>
-        <path d="M30,0 L21,21 L8,8 Z" transform="rotate(-40)"/>
-        <path d="M0,30 L-21,21 L-8,8 Z" transform="rotate(-80)"/>
-        <path d="M-30,0 L-21,-21 L-8,-8 Z" transform="rotate(-120)"/>
+        <path d="M0,-34 L24,-24 L9,-9 Z"/>
+        <path d="M0,-34 L24,-24 L9,-9 Z" transform="rotate(90)"/>
+        <path d="M0,-34 L24,-24 L9,-9 Z" transform="rotate(180)"/>
+        <path d="M0,-34 L24,-24 L9,-9 Z" transform="rotate(270)"/>
+        <path d="M0,-34 L24,-24 L9,-9 Z" transform="rotate(45)"/>
+        <path d="M0,-34 L24,-24 L9,-9 Z" transform="rotate(135)"/>
+        <path d="M0,-34 L24,-24 L9,-9 Z" transform="rotate(225)"/>
+        <path d="M0,-34 L24,-24 L9,-9 Z" transform="rotate(315)"/>
         <animateTransform attributeName="transform" type="rotate"
-          values="0;40;0" dur="6s" repeatCount="indefinite"
-          calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1" keyTimes="0;0.5;1"/>
+          values="0;44;0" dur="7s" repeatCount="indefinite"
+          calcMode="spline" keySplines="0.45 0 0.2 1;0.45 0 0.2 1" keyTimes="0;0.5;1"/>
       </g>
     </g>
-    <!-- Aperture opening, breathing like an iris -->
-    <circle r="13" fill="#050506" stroke="#FFD629" stroke-width="2.5">
-      <animate attributeName="r" values="13;9;13" dur="6s" repeatCount="indefinite"
-        calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1" keyTimes="0;0.5;1"/>
+
+    <!-- Glass dome over the blades -->
+    <circle r="38" fill="url(#dome)"/>
+    <ellipse cx="-13" cy="-16" rx="17" ry="11" fill="#CFE4F5" opacity="0.3"
+             transform="rotate(-32)"/>
+
+    <!-- The opening, breathing -->
+    <circle r="15" fill="#030304" stroke="#FFD629" stroke-width="2.8">
+      <animate attributeName="r" values="15;10;15" dur="7s" repeatCount="indefinite"
+        calcMode="spline" keySplines="0.45 0 0.2 1;0.45 0 0.2 1" keyTimes="0;0.5;1"/>
+    </circle>
+    <circle r="15" fill="none" stroke="#FFD629" stroke-width="1" opacity="0.35">
+      <animate attributeName="r" values="15;26;15" dur="7s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.35;0;0.35" dur="7s" repeatCount="indefinite"/>
     </circle>
   </g>
 
   <!-- Wordmark -->
-  <text x="216" y="88" font-family="-apple-system,BlinkMacSystemFont,'SF Pro Display',Helvetica,Arial,sans-serif"
-        font-size="46" font-weight="600" fill="#F5F5F7" letter-spacing="-0.5">Camera</text>
-  <rect x="218" y="102" width="38" height="3" rx="1.5" fill="#FFD629"/>
-  <text x="216" y="132" font-family="-apple-system,BlinkMacSystemFont,'SF Pro Text',Helvetica,Arial,sans-serif"
-        font-size="15" fill="#9A9AA0">A camera for the Mac, wearing the iPhone's interface.</text>
+  <text x="232" y="92" font-family="-apple-system,BlinkMacSystemFont,'SF Pro Display',Helvetica,Arial,sans-serif"
+        font-size="52" font-weight="700" fill="#F7F7F9" letter-spacing="-1">Camera</text>
+  <rect x="234" y="108" width="44" height="3" rx="1.5" fill="#FFD629"/>
+  <text x="232" y="140" font-family="-apple-system,BlinkMacSystemFont,'SF Pro Text',Helvetica,Arial,sans-serif"
+        font-size="15.5" fill="#9E9EA6">A camera for the Mac, wearing the iPhone's interface.</text>
 
-  <!-- Mode carousel, cycling the way the app's does -->
+  <!-- Install line -->
+  <g transform="translate(232 160)">
+    <rect width="384" height="34" rx="8" fill="#000" fill-opacity="0.45" stroke="#FFFFFF" stroke-opacity="0.09"/>
+    <text x="14" y="22" font-family="ui-monospace,SFMono-Regular,Menlo,monospace"
+          font-size="13" fill="#7FCF8F">$</text>
+    <text x="30" y="22" font-family="ui-monospace,SFMono-Regular,Menlo,monospace"
+          font-size="13" fill="#D8D8DE">brew install --cask yusufdiallo1/tap/camera</text>
+  </g>
+
+  <!-- Mode carousel -->
   <g font-family="-apple-system,BlinkMacSystemFont,'SF Pro Text',Helvetica,Arial,sans-serif"
-     font-size="11.5" font-weight="600" letter-spacing="0.8">
-    <text x="216" y="164" fill="#5A5A60">TIME LAPSE</text>
-    <text x="304" y="164" fill="#5A5A60">SLO-MO</text>
-    <text x="370" y="164" fill="#5A5A60">PHOTO
-      <animate attributeName="fill" values="#FFD629;#5A5A60;#5A5A60;#5A5A60;#FFD629"
-               dur="8s" repeatCount="indefinite"/>
+     font-size="11.5" font-weight="600" letter-spacing="0.9">
+    <text x="232" y="224" fill="#4E4E56">TIME LAPSE</text>
+    <text x="322" y="224" fill="#4E4E56">SLO-MO</text>
+    <text x="390" y="224" fill="#4E4E56">PHOTO
+      <animate attributeName="fill" values="#FFD629;#4E4E56;#4E4E56;#4E4E56;#4E4E56;#FFD629"
+               dur="9s" repeatCount="indefinite"/>
     </text>
-    <text x="424" y="164" fill="#5A5A60">PORTRAIT
-      <animate attributeName="fill" values="#5A5A60;#FFD629;#5A5A60;#5A5A60;#5A5A60"
-               dur="8s" repeatCount="indefinite"/>
+    <text x="444" y="224" fill="#4E4E56">PORTRAIT
+      <animate attributeName="fill" values="#4E4E56;#FFD629;#4E4E56;#4E4E56;#4E4E56;#4E4E56"
+               dur="9s" repeatCount="indefinite"/>
     </text>
-    <text x="498" y="164" fill="#5A5A60">VIDEO
-      <animate attributeName="fill" values="#5A5A60;#5A5A60;#FFD629;#5A5A60;#5A5A60"
-               dur="8s" repeatCount="indefinite"/>
+    <text x="518" y="224" fill="#4E4E56">VIDEO
+      <animate attributeName="fill" values="#4E4E56;#4E4E56;#FFD629;#4E4E56;#4E4E56;#4E4E56"
+               dur="9s" repeatCount="indefinite"/>
     </text>
-    <text x="548" y="164" fill="#5A5A60">CINEMATIC
-      <animate attributeName="fill" values="#5A5A60;#5A5A60;#5A5A60;#FFD629;#5A5A60"
-               dur="8s" repeatCount="indefinite"/>
+    <text x="570" y="224" fill="#4E4E56">CINEMATIC
+      <animate attributeName="fill" values="#4E4E56;#4E4E56;#4E4E56;#FFD629;#4E4E56;#4E4E56"
+               dur="9s" repeatCount="indefinite"/>
+    </text>
+    <text x="654" y="224" fill="#4E4E56">SCREEN
+      <animate attributeName="fill" values="#4E4E56;#4E4E56;#4E4E56;#4E4E56;#FFD629;#4E4E56"
+               dur="9s" repeatCount="indefinite"/>
     </text>
   </g>
 
-  <!-- Recording pulse -->
-  <g transform="translate(790 100)">
-    <circle r="22" fill="none" stroke="#2A2A2F" stroke-width="2"/>
-    <circle r="14" fill="#FA3C3C">
-      <animate attributeName="opacity" values="1;0.35;1" dur="2.4s" repeatCount="indefinite"/>
+  <!-- Record pulse -->
+  <g transform="translate(778 130)">
+    <circle r="26" fill="none" stroke="#2D2D33" stroke-width="2"/>
+    <circle r="26" fill="none" stroke="#FA3C3C" stroke-width="2" opacity="0">
+      <animate attributeName="r" values="26;38;26" dur="2.6s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.55;0;0.55" dur="2.6s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="16" fill="#FA3C3C">
+      <animate attributeName="opacity" values="1;0.4;1" dur="2.6s" repeatCount="indefinite"/>
     </circle>
   </g>
 </svg>
