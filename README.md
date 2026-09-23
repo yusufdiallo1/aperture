@@ -14,7 +14,7 @@ brew install --cask yusufdiallo1/tap/cam
 &nbsp;·&nbsp;
 [📖 setup guide](docs/SETUP.md)
 
-<sub>Homebrew clears the quarantine flag for you, so there is no right-click dance.</sub>
+<sub>The cask clears the quarantine flag, so there is no right-click dance.</sub>
 
 <br>
 
@@ -241,7 +241,8 @@ If you decline, captures go to the folder alone and everything still works.
 
 ## Installing
 
-Easiest is Homebrew, which clears the quarantine flag for you:
+Easiest is Homebrew. The cask clears the quarantine flag as it installs, so
+the app opens straight away:
 
 ```bash
 brew install --cask yusufdiallo1/tap/cam
