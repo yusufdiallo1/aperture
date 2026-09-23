@@ -1,13 +1,13 @@
 <div align="center">
 
-<img src="docs/banner.svg" width="100%" alt="Camera — a camera for the Mac, wearing the iPhone's interface">
+<img src="docs/banner.svg" width="100%" alt="Noctura — a camera for the Mac, wearing the iPhone's interface">
 
 <br>
 
 ### Install
 
 ```bash
-brew install --cask yusufdiallo1/tap/cam
+brew install --cask yusufdiallo1/tap/noctura
 ```
 
 **or [⬇ download the DMG](../../releases/latest)**
@@ -91,7 +91,7 @@ window runs continuously, so the clip covers the seconds *before* the shutter as
 well as after. Turn it on with the LIVE control or in Settings.
 
 Apple's own Live Photo format pairs its two files through metadata that only
-Photos writes. Rather than imitate that, Camera saves a still and a clip and
+Photos writes. Rather than imitate that, Noctura saves a still and a clip and
 says that is what they are.
 
 ### About Portrait, Cinematic and Slo-Mo
@@ -158,7 +158,7 @@ button, then clears itself.
 | `⌥⌘C` | Capture |
 | `⌥⌘R` | Open the screen recorder |
 
-Both work system-wide, without Camera in front. That matters most for screen
+Both work system-wide, without Noctura in front. That matters most for screen
 recording: stopping a recording by clicking back into the app puts that click in
 the footage.
 
@@ -201,16 +201,16 @@ tails off words and sounds worse than the noise it removes.
 
 ## Widgets
 
-Three, in the desktop widget gallery. **Open Camera once first** — macOS only
+Three, in the desktop widget gallery. **Open Noctura once first** — macOS only
 registers a widget extension after its host app has run.
 
 | Widget | Shows |
 | --- | --- |
 | **Shot Count** | How much you have captured; opens the camera |
 | **Recent Captures** | Your latest thumbnails; opens the library |
-| **Camera Modes** | Buttons that open a specific mode |
+| **Noctura Modes** | Buttons that open a specific mode |
 
-To add one: right-click the desktop → **Edit Widgets** → search **Camera**.
+To add one: right-click the desktop → **Edit Widgets** → search **Noctura**.
 
 A widget cannot show a live viewfinder, and no app's can — macOS renders
 widgets as still snapshots on a schedule rather than running views. These show
@@ -233,7 +233,7 @@ to leak.
 
 ## Where captures go
 
-Into your **Photos library**, in an album called Camera, plus a copy in the
+Into your **Photos library**, in an album called Noctura, plus a copy in the
 app's own folder that the Library tab reads.
 
 The app asks only for *add* permission — it never reads your existing photos.
@@ -245,18 +245,18 @@ Easiest is Homebrew. The cask clears the quarantine flag as it installs, so
 the app opens straight away:
 
 ```bash
-brew install --cask yusufdiallo1/tap/cam
+brew install --cask yusufdiallo1/tap/noctura
 ```
 
 Otherwise download the DMG from **[Releases](../../releases/latest)**, open it,
-and drag Camera to Applications.
+and drag Noctura to Applications.
 
 **If the DMG will not open**, macOS has quarantined it — everything downloaded
 from a browser gets that flag, and a quarantined disk image will not open
 unless Apple has notarized it. One command clears it:
 
 ```bash
-xattr -dr com.apple.quarantine ~/Downloads/Camera*.dmg
+xattr -dr com.apple.quarantine ~/Downloads/Noctura*.dmg
 ```
 
 **On first launch, right-click the app and choose Open.** Same cause: this
@@ -279,8 +279,8 @@ AppKit · Accelerate · ImageIO · WidgetKit
 
 ## Troubleshooting
 
-**"Camera access is off"** — grant it in System Settings › Privacy & Security ›
-Camera, then quit and reopen the app.
+**"Noctura access is off"** — grant it in System Settings › Privacy & Security ›
+Noctura, then quit and reopen the app.
 
 **Screen tab says recording is off after enabling it** — ScreenCaptureKit reads
 the permission when the process starts, so quit and reopen the app.
@@ -290,7 +290,7 @@ If a file was moved or deleted outside the app, its thumbnail shows a
 placeholder icon.
 
 **Something else** — the app writes a startup trace to
-`~/Library/Containers/com.yusufdiallo.camera/Data/Library/Logs/Camera-boot.log`.
+`~/Library/Containers/com.yusufdiallo.noctura/Data/Library/Logs/Noctura-boot.log`.
 Its last line is where things stopped.
 
 ## Known limits

@@ -1,4 +1,4 @@
-# Setting up Camera
+# Setting up Noctura
 
 Five minutes, once. After that the app just opens.
 
@@ -10,7 +10,7 @@ Five minutes, once. After that the app just opens.
 expected, and this fixes it:
 
 ```bash
-xattr -dr com.apple.quarantine ~/Downloads/Camera*.dmg
+xattr -dr com.apple.quarantine ~/Downloads/Noctura*.dmg
 ```
 
 Then double-click it normally.
@@ -23,34 +23,34 @@ hand. The command above removes exactly that one attribute and nothing else.
 Alternatively: **right-click the DMG → Open**, and confirm.
 
 > Want to check the download first? The release page lists the file's SHA-256.
-> Run `shasum -a 256 Camera-1.0.dmg` and compare before doing anything else.
+> Run `shasum -a 256 Noctura-1.5.dmg` and compare before doing anything else.
 
 ## 2 · Open the app the first time
 
-Drag **Camera** into Applications, then **right-click it and choose Open**.
+Drag **Noctura** into Applications, then **right-click it and choose Open**.
 Double-clicking will not work yet.
 
 The same warning appears for the same reason. Click **Open**; macOS remembers
 the decision and it opens normally from then on. If it still refuses:
 
 ```bash
-xattr -dr com.apple.quarantine /Applications/Camera.app
+xattr -dr com.apple.quarantine /Applications/Noctura.app
 ```
 
 ---
 
-## 3 · Camera and microphone
+## 3 · Noctura and microphone
 
 The app asks the first time it opens. Click **Allow** for each.
 
-If you clicked Don't Allow, or the viewfinder says *Camera access is off*:
+If you clicked Don't Allow, or the viewfinder says *Noctura access is off*:
 
 1. Open **System Settings › Privacy & Security › Camera**
-2. Turn on **Camera**
+2. Turn on **Noctura**
 3. Do the same under **Microphone** if you want sound with video
-4. **Quit and reopen Camera** — macOS only re-reads this at launch
+4. **Quit and reopen Noctura** — macOS only re-reads this at launch
 
-The app has a shortcut: the button on the "Camera access is off" screen opens
+The app has a shortcut: the button on the "Noctura access is off" screen opens
 that settings pane directly.
 
 ---
@@ -72,7 +72,7 @@ Only needed if you use the Screen tab. macOS will not prompt automatically, so:
 
 1. Open the **Screen** tab
 2. Click **Open Privacy Settings**
-3. Turn on **Camera** in the list under **Screen & System Audio Recording**
+3. Turn on **Noctura** in the list under **Screen & System Audio Recording**
 4. **Quit and reopen the app**
 
 That last step is not optional. ScreenCaptureKit reads the permission once when
@@ -87,7 +87,7 @@ Open the app once, then:
 
 1. Right-click your desktop and choose **Edit Widgets**
    *(or click the date in the menu bar, then Edit Widgets at the bottom)*
-2. Search for **Camera**
+2. Search for **Noctura**
 3. Drag one out
 
 Three are available:
@@ -96,7 +96,7 @@ Three are available:
 | --- | --- |
 | **Shot Count** | How much you have captured; opens the camera |
 | **Recent Captures** | Your latest thumbnails; opens the library |
-| **Camera Modes** | Buttons that open a specific mode |
+| **Noctura Modes** | Buttons that open a specific mode |
 
 A widget cannot show a live viewfinder, and no app's can — macOS renders
 widgets as still snapshots on a schedule rather than running views, so there is
@@ -107,7 +107,7 @@ right now.
 
 ## Troubleshooting
 
-**"Camera access is off" even though it is on in Settings**
+**"Noctura access is off" even though it is on in Settings**
 Quit the app completely (⌘Q) and reopen it. Permissions are read at launch.
 
 **Screen tab still says recording is off**
@@ -125,7 +125,7 @@ If they still do not show, log out and back in.
 The app writes a startup log:
 
 ```bash
-cat ~/Library/Containers/com.yusufdiallo.camera/Data/Library/Logs/Camera-boot.log
+cat ~/Library/Containers/com.yusufdiallo.noctura/Data/Library/Logs/Noctura-boot.log
 ```
 
 The last line is where it stopped.
@@ -135,8 +135,8 @@ The last line is where it stopped.
 ## Removing it
 
 ```bash
-rm -rf /Applications/Camera.app
-rm -rf ~/Library/Containers/com.yusufdiallo.camera
+rm -rf /Applications/Noctura.app
+rm -rf ~/Library/Containers/com.yusufdiallo.noctura
 ```
 
 The first removes the app, the second removes its settings and cached
