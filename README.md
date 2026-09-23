@@ -19,7 +19,7 @@ brew install --cask yusufdiallo1/tap/noctura
 <img src="https://img.shields.io/badge/macOS-14%2B-0B0B0D?style=for-the-badge&labelColor=0B0B0D&color=2A2A31">
 <img src="https://img.shields.io/badge/Apple_silicon-FFD629?style=for-the-badge&labelColor=0B0B0D&color=FFD629">
 <img src="https://img.shields.io/badge/dependencies-none-0B0B0D?style=for-the-badge&labelColor=0B0B0D&color=2A2A31">
-<img src="https://img.shields.io/badge/network-never-0B0B0D?style=for-the-badge&labelColor=0B0B0D&color=2A2A31">
+<img src="https://img.shields.io/badge/telemetry-none-0B0B0D?style=for-the-badge&labelColor=0B0B0D&color=2A2A31">
 
 <br>
 
@@ -47,9 +47,14 @@ mode carousel, control cluster, filters, the lot — and adds the things a Mac
 camera app actually needs: screen recording, an editor, and direct saving to
 your Photos library.
 
-Everything runs on your machine. **No account, no server, no network calls, no
-telemetry.** The app has never made an outbound connection and does not contain
-the code to make one.
+Everything runs on your machine. **No account, no server, no telemetry.** Your
+captures, profiles and settings never leave the Mac, and nothing about how you
+use the app is collected or transmitted.
+
+There is exactly one outbound request: a daily check against a public GitHub
+file to see whether a newer version exists. It sends no identifiers and nothing
+about you, and **Settings → Check for updates** turns it off. That is the whole
+of the app's network behaviour.
 
 ## At a glance
 
@@ -272,7 +277,7 @@ counts and dates and no image data or file paths, so there is nothing there to
 display even by mistake. Each person's captures go to their own Photos library,
 which the app cannot read.
 
-There is no password, no server and no network, so there is no credential store
+There is no password and no server, so there is no credential store
 to leak.
 
 ## Where captures go
