@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 260" width="880" height="260" role="img" aria-label="Camera — a camera for the Mac, wearing the iPhone's interface">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 260" width="880" height="260" role="img" aria-label="Noctura — a camera for the Mac, wearing the iPhone's interface">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="0.35" y2="1">
       <stop offset="0%" stop-color="#232327"/>
@@ -66,7 +66,7 @@
 
   <!-- Wordmark -->
   <text x="232" y="92" font-family="-apple-system,BlinkMacSystemFont,'SF Pro Display',Helvetica,Arial,sans-serif"
-        font-size="52" font-weight="700" fill="#F7F7F9" letter-spacing="-1">Camera</text>
+        font-size="46" font-weight="700" fill="#F7F7F9" letter-spacing="-1">Noctura</text>
   <rect x="234" y="108" width="44" height="3" rx="1.5" fill="#FFD629"/>
   <text x="232" y="140" font-family="-apple-system,BlinkMacSystemFont,'SF Pro Text',Helvetica,Arial,sans-serif"
         font-size="15.5" fill="#9E9EA6">A camera for the Mac, wearing the iPhone's interface.</text>
@@ -77,7 +77,7 @@
     <text x="14" y="22" font-family="ui-monospace,SFMono-Regular,Menlo,monospace"
           font-size="13" fill="#7FCF8F">$</text>
     <text x="30" y="22" font-family="ui-monospace,SFMono-Regular,Menlo,monospace"
-          font-size="13" fill="#D8D8DE">brew install --cask yusufdiallo1/tap/cam</text>
+          font-size="13" fill="#D8D8DE">brew install --cask yusufdiallo1/tap/noctura</text>
   </g>
 
   <!-- Mode carousel -->
