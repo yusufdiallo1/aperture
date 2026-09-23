@@ -2,27 +2,24 @@
 
 <img src="docs/banner.svg" width="100%" alt="Noctura — a camera for the Mac, wearing the iPhone's interface">
 
-<br>
+<br><br>
 
-### Install
-
-```bash
+```
 brew install --cask yusufdiallo1/tap/noctura
 ```
 
-**or [⬇ download the DMG](https://github.com/yusufdiallo1/noctura/releases/latest)**
-&nbsp;·&nbsp;
-[📖 setup guide](docs/SETUP.md)
-
+<a href="https://github.com/yusufdiallo1/noctura/releases/latest"><b>Download the DMG</b></a>
+&nbsp;&nbsp;·&nbsp;&nbsp;
+<a href="docs/SETUP.md">Setup guide</a>
 
 <sub>The cask clears the quarantine flag, so there is no right-click dance.</sub>
 
 <br>
 
-![macOS 14+](https://img.shields.io/badge/macOS-14%2B-1F1F22?style=flat-square&labelColor=0B0B0D)
-![Apple silicon](https://img.shields.io/badge/Apple_silicon-FFD629?style=flat-square&labelColor=0B0B0D&color=FFD629)
-![No dependencies](https://img.shields.io/badge/dependencies-none-1F1F22?style=flat-square&labelColor=0B0B0D)
-![No network](https://img.shields.io/badge/network-never-1F1F22?style=flat-square&labelColor=0B0B0D)
+<img src="https://img.shields.io/badge/macOS-14%2B-0B0B0D?style=for-the-badge&labelColor=0B0B0D&color=2A2A31">
+<img src="https://img.shields.io/badge/Apple_silicon-FFD629?style=for-the-badge&labelColor=0B0B0D&color=FFD629">
+<img src="https://img.shields.io/badge/dependencies-none-0B0B0D?style=for-the-badge&labelColor=0B0B0D&color=2A2A31">
+<img src="https://img.shields.io/badge/network-never-0B0B0D?style=for-the-badge&labelColor=0B0B0D&color=2A2A31">
 
 <br>
 
@@ -37,8 +34,9 @@ brew install --cask yusufdiallo1/tap/noctura
 
 </div>
 
-> Downloads live here. The source is closed and kept in a private
-> repository, because GitHub will not serve a public download from one.
+> **Downloads live here.** Noctura is closed source; the source is kept in a
+> private repository, because GitHub will not serve a public download from
+> one.
 
 ---
 
@@ -291,17 +289,57 @@ Download the DMG from
 **[noctura](https://github.com/yusufdiallo1/noctura/releases/latest)**,
 open it, and drag Noctura to Applications.
 
-**If the DMG will not open**, macOS has quarantined it — everything downloaded
-from a browser gets that flag, and a quarantined disk image will not open
-unless Apple has notarized it. One command clears it:
+### "Apple could not verify this is free of malware"
 
-```bash
-xattr -dr com.apple.quarantine ~/Downloads/Camera*.dmg
+If you download the DMG with a browser you will see this:
+
+> **"Noctura 1.7.dmg" Not Opened**
+> Apple could not verify "Noctura 1.7.dmg" is free of malware that may harm
+> your Mac or compromise your privacy.
+> &nbsp;&nbsp; [ Move to Trash ] &nbsp; [ Done ]
+
+**Click Done. Do not click Move to Trash.**
+
+Nothing is wrong with the file. Noctura is not notarized — that requires a paid
+Apple Developer account — so macOS refuses to verify it and says so in the
+strongest wording it has. The same dialog appears for every un-notarized app.
+
+You have two ways past it.
+
+**The easy way — install with Homebrew instead, and none of this happens:**
+
+```
+brew install --cask yusufdiallo1/tap/noctura
 ```
 
-**On first launch, right-click the app and choose Open.** Same cause: this
-project does not pay for Apple notarization, so the right-click is the standard
-one-time bypass. macOS remembers it.
+The cask clears the quarantine flag as part of installing, so the app opens on
+the first try.
+
+**If you already downloaded the DMG,** open Terminal and run:
+
+```
+xattr -dr com.apple.quarantine ~/Downloads/Noctura*.dmg
+```
+
+Then double-click the DMG again. It will open normally.
+
+### Letting the app open the first time
+
+After dragging Noctura to Applications, the first launch may be blocked too.
+
+1. Open **System Settings**
+2. Click **Privacy & Security** in the left sidebar
+3. Scroll down to the **Security** section
+4. You will see: *"Noctura" was blocked to protect your Mac.*
+5. Click **Open Anyway**
+6. Enter your password or use Touch ID
+7. Click **Open** in the dialog that follows
+
+macOS remembers this. You only do it once.
+
+An alternative that skips System Settings: find Noctura in Applications,
+**right-click it and choose Open** (not a double-click), then click **Open** in
+the dialog. Right-clicking is what makes macOS offer the choice at all.
 
 The app then asks for camera, microphone and Photos access as it needs them,
 and screen recording only when you first open the Screen tab.
@@ -387,9 +425,21 @@ runs at real time and the sound would drift against the picture immediately.
 
 ## Troubleshooting
 
-**"Camera access is off"** — grant it in System Settings › Privacy & Security ›
-Camera. If you built the app yourself and get asked repeatedly, run
-`scripts/make-signing-cert.sh`.
+**"Camera access is off"** — macOS is holding the permission. To grant it:
+
+1. Open **System Settings**
+2. Click **Privacy & Security** in the left sidebar
+3. Click **Camera**
+4. Turn **Noctura** on
+
+Microphone, Photos and Screen Recording live in the same place, each under its
+own heading in that list. **Screen Recording is read once at launch**, so quit
+and reopen Noctura after granting that one — the others take effect
+immediately.
+
+If you built the app yourself and macOS asks every single time, run
+`scripts/make-signing-cert.sh`. Without a stable signing identity the
+permission is keyed to a code hash that changes on every build.
 
 **Screen tab says recording is off after enabling it** — ScreenCaptureKit reads
 the permission when the process starts, so quit and reopen the app.
@@ -399,13 +449,14 @@ If a file was moved or deleted outside the app, its thumbnail shows a
 placeholder icon.
 
 **Something else** — the app writes a startup trace to
-`~/Library/Containers/com.yusufdiallo.noctura/Data/Library/Logs/Camera-boot.log`.
+`~/Library/Containers/com.yusufdiallo.noctura/Data/Library/Logs/Noctura-boot.log`.
 Its last line is where things stopped.
 
 ## Known limits
 
-- **Not notarized**, hence the right-click-to-open step. Notarization needs a
-  paid Apple Developer account.
+- **Not notarized**, which is why macOS says it cannot verify the app and why
+  the first launch needs Open Anyway. Notarization needs a paid Apple Developer
+  account. Installing with Homebrew avoids the step entirely.
 - **Time Lapse and Slo-Mo record no audio.** Their footage no longer runs at
   real time, so real-time sound would drift against the picture immediately.
 - **Apple silicon only.** Adding Intel is a one-line change to the build script
