@@ -1,20 +1,21 @@
 <div align="center">
 
-<img src="docs/banner.svg" width="100%" alt="Camera — a camera for the Mac, wearing the iPhone's interface">
+<img src="docs/banner.svg" width="100%" alt="Noctura — a camera for the Mac, wearing the iPhone's interface">
 
 <br>
 
 ### Install
 
 ```bash
-brew install --cask yusufdiallo1/tap/cam
+brew install --cask yusufdiallo1/tap/noctura
 ```
 
-**or [⬇ download the DMG](https://github.com/yusufdiallo1/camera-releases/releases/latest)**
+**or [⬇ download the DMG](https://github.com/yusufdiallo1/noctura/releases/latest)**
 &nbsp;·&nbsp;
 [📖 setup guide](docs/SETUP.md)
 
-<sub>Homebrew clears the quarantine flag for you, so there is no right-click dance.</sub>
+
+<sub>The cask clears the quarantine flag, so there is no right-click dance.</sub>
 
 <br>
 
@@ -36,9 +37,8 @@ brew install --cask yusufdiallo1/tap/cam
 
 </div>
 
-> Source lives here. Downloads come from
-> **[camera-releases](https://github.com/yusufdiallo1/camera-releases)**, because
-> GitHub will not serve a public download from a private repository.
+> Downloads live here. The source is closed and kept in a private
+> repository, because GitHub will not serve a public download from one.
 
 ---
 
@@ -288,8 +288,8 @@ If you decline, captures go to the folder alone and everything still works.
 ## Installing
 
 Download the DMG from
-**[camera-releases](https://github.com/yusufdiallo1/camera-releases/releases/latest)**,
-open it, and drag Camera to Applications.
+**[noctura](https://github.com/yusufdiallo1/noctura/releases/latest)**,
+open it, and drag Noctura to Applications.
 
 **If the DMG will not open**, macOS has quarantined it — everything downloaded
 from a browser gets that flag, and a quarantined disk image will not open
@@ -313,7 +313,7 @@ what to do when macOS keeps saying no.
 
 ```bash
 ./scripts/make-signing-cert.sh   # once
-./scripts/build.sh               # builds build/Camera.app
+./scripts/build.sh               # builds build/Noctura.app
 ./scripts/make-dmg.sh            # builds dist/Camera-<version>.dmg
 ```
 
