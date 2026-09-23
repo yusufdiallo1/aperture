@@ -83,6 +83,9 @@ the code to make one.
 around it; release to keep the run. A hold shorter than a quarter second counts
 as an ordinary tap, because holding the mouse down briefly is how people click.
 
+The run then appears in the Library as a group — tap one frame to keep it and
+discard the rest, or keep them all.
+
 **Live Photos** save a still plus a short clip of the moment around it — the
 window runs continuously, so the clip covers the seconds *before* the shutter as
 well as after. Turn it on with the LIVE control or in Settings.
