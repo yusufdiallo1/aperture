@@ -61,19 +61,25 @@ of the app's network behaviour.
 | | |
 | --- | --- |
 | **Six modes** | Photo · Video · Time Lapse · Slo-Mo · Portrait · Cinematic |
-| **Burst** | Hold the shutter for a run of frames |
+| **Burst** | Turn it on in the control sheet, then hold the shutter |
 | **Live Photos** | A still plus the moment around it |
 | **Screen** | Whole display or a single window, with system audio |
 | **Effects** | 23 across five groups, live in the viewfinder |
 | **Editing** | Crop, rotate, grade, trim, clean up speech — all non-destructive |
 | **Storage** | Straight into Photos, add-only permission |
 | **Profiles** | Several people per Mac, no server, no passwords |
-| **Widgets** | Shot count, recent captures, mode shortcuts |
 | **Shortcuts** | ⌥⌘C to capture, ⌥⌘R for the recorder, from anywhere |
+| **iPhone** | Use it as the camera over Continuity, when macOS offers it |
+| **Navigation** | Across the top, or a frosted pill you drag where you like |
 | **Styles** | Five photographic styles, applied before any filter |
 | **Night Mode** | Shadow recovery for a dim room, at two strengths |
 | **Aspect** | 4:3, 16:9 or 1:1, matched by the viewfinder |
 | **Zoom** | 1× to 7×, with the long end marked for what it costs |
+
+> **Widgets are not in this build.** The extension crashes inside
+> ExtensionFoundation's bootstrap the moment macOS launches it, before any of
+> this project's code runs, and a crashing extension takes its host app down
+> with it. It is built only with `BUILD_WIDGETS=1` until that is solved.
 
 ## Screenshots
 
@@ -170,6 +176,16 @@ frame using smoothing, posterisation and edge detection. Turning a face into a
 drawn character needs a trained neural model rather than a filter chain, and
 this app does not ship one — so nothing here is named for a look it cannot
 actually produce.
+
+## The shutter
+
+Tap it for one photo. **Hold and slide right** and it starts recording, the way
+iOS does — you never leave the viewfinder to shoot a clip.
+
+Holding on its own used to fire a burst, which meant one press produced ten
+photos when you wanted one. Burst is still there, as a choice: turn it on in the
+control sheet and holding gathers frames, with the count in the middle of the
+shutter.
 
 ## Styles, aspect and zoom
 
