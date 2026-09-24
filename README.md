@@ -76,10 +76,12 @@ of the app's network behaviour.
 | **Aspect** | 4:3, 16:9 or 1:1, matched by the viewfinder |
 | **Zoom** | 1× to 7×, with the long end marked for what it costs |
 
-> **Widgets are not in this build.** The extension crashes inside
-> ExtensionFoundation's bootstrap the moment macOS launches it, before any of
-> this project's code runs, and a crashing extension takes its host app down
-> with it. It is built only with `BUILD_WIDGETS=1` until that is solved.
+> **Widgets are not in this build, and cannot be without a paid Apple
+> Developer account.** macOS will not register a widget extension that has no
+> Team Identifier, which only Apple issues. Every third-party widget that works
+> on this Mac carries one; a self-signed build reports `not set`. A minimal
+> twenty-line widget, signed locally, is never even launched — no crash report,
+> no registration, nothing. See [Known limits](#known-limits).
 
 ## Screenshots
 
@@ -478,6 +480,13 @@ Its last line is where things stopped.
 - **Not notarized**, which is why macOS says it cannot verify the app and why
   the first launch needs Open Anyway. Notarization needs a paid Apple Developer
   account. Installing with Homebrew avoids the step entirely.
+- **No widgets**, for the same reason. macOS refuses to register a widget
+  extension without a Team Identifier, and only Apple issues those. This was
+  established by elimination: the extension's version mismatch and its missing
+  `CFBundleSupportedPlatforms` key were both real bugs and both fixed, and
+  neither changed anything; a minimal `StaticConfiguration` widget with none of
+  this project's code in it is refused identically. The widget code is written
+  and builds with `BUILD_WIDGETS=1` for whenever that account exists.
 - **Time Lapse and Slo-Mo record no audio.** Their footage no longer runs at
   real time, so real-time sound would drift against the picture immediately.
 - **Apple silicon only.** Adding Intel is a one-line change to the build script
