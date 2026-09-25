@@ -4,7 +4,7 @@
 
 <br><br>
 
-```
+```bash
 brew install --cask yusufdiallo1/tap/aperture
 ```
 
@@ -331,7 +331,7 @@ You have two ways past it.
 
 **The easy way — install with Homebrew instead, and none of this happens:**
 
-```
+```bash
 brew install --cask yusufdiallo1/tap/aperture
 ```
 
