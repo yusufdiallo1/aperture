@@ -40,6 +40,90 @@ brew install --cask yusufdiallo1/tap/aperture
 
 ---
 
+## Result
+
+| | |
+| --- | --- |
+| **55** Swift files, **14,018** lines | no third-party dependencies |
+| **340** engine tests | against real files, not mocks |
+| **31** artifact checks | on every build |
+| **9.9 MB** download | macOS 14+, Apple silicon |
+| **1** outbound request | a daily version check you can switch off |
+
+## Tech stack
+
+Swift 5 and SwiftUI throughout, AppKit where SwiftUI cannot reach — the menu
+bar item is an `NSStatusItem`, the countdown is an `NSPanel`, and the window
+needs `fullSizeContentView` set by hand.
+
+| Framework | What it does here |
+| --- | --- |
+| **AVFoundation** | Capture session, asset writing, trim and export |
+| **Core Image** | Filters, styles, night mode, colour grading |
+| **ScreenCaptureKit** | Screen and single-window recording |
+| **Vision** | Face detection for the guide and Portrait's outline |
+| **Photos** | Saving, Live Photo pairing, Recently Deleted and Hidden |
+| **Combine** | Frame delivery from the capture queue to the preview |
+| **WidgetKit** | Written, blocked on a paid developer account |
+| **Carbon** | Global hotkeys, the one API that still does them |
+| **Metal** | Backs the Core Image context |
+
+No package manager, no build system beyond a shell script: `swiftc` compiles
+the sources directly, `codesign` signs them, `hdiutil` makes the disk image.
+
+## Problem
+
+Photo Booth is the only camera app that ships with macOS and it has barely
+changed in fifteen years: one mode, a fixed window, effects that look like
+2007. Meanwhile the iPhone camera is one of the most refined interfaces Apple
+makes — zoom pills you hold and drag, a shutter that slides into video, a mode
+carousel — and none of it exists on the Mac. To take a decent photo with a Mac
+you open a video-call app and screenshot yourself.
+
+There is also a hardware gap nobody acknowledges. A Mac has no depth sensor,
+most Mac cameras cap at 30 fps, and `videoFieldOfView` is unavailable on macOS
+entirely. Apps that offer "Portrait mode" on a Mac are synthesising it and not
+saying so.
+
+## Solution
+
+The iPhone camera interface, built natively for macOS, with the limits stated
+rather than hidden.
+
+Portrait and Cinematic are labelled SIMULATED, because the blur comes from a
+detected outline rather than measured distance. Slo-Mo reports the frame rate
+it actually achieved. Flash and Night Mode appear in Settings as unavailable,
+with the reason, instead of being quietly dropped. The zoom dial shows what
+each stop costs in pixels rather than inventing millimetres, because there is
+no way to compute a focal length on this hardware.
+
+## Process
+
+Measurement over assumption, which has repeatedly changed the plan:
+
+- Swapping `createCGImage` for an IOSurface render looked like an obvious
+  speed-up. Measured: **1.82 ms against 3.86 ms** — the optimisation was
+  twice as slow. Not done.
+- The gallery scan looked like the cause of UI lag. Measured at 500 files:
+  **2.6 ms**, under a single frame. Left alone. The real cause was 1.8 ms of
+  Core Image work running on the main thread between every click and its
+  effect.
+- Crop appeared to work and did nothing: the writer's output size was pinned
+  to the source's dimensions, so cropped frames were rendered into full-size
+  buffers. There was no video-editing test at all, which is how it shipped.
+
+Every fix gets a test, and every test is **sabotage-tested** — the bug is
+reintroduced to confirm the test fails. That came from a real mistake: a
+Slo-Mo fix was reported as correct when its test had passed by luck, and
+repeated runs gave 21, 25, 33 and 45 frames.
+
+The hardest bugs were the ones where the first diagnosis was wrong. The grey
+strip above the viewfinder had two separate causes — a titlebar inset no
+SwiftUI colour could reach, *and* navigation padding exposing a second
+backdrop. Captures vanishing had one cause explaining four symptoms: they were
+written to `.cachesDirectory`, which macOS purges, so the player, the trimmer
+and the audio cleanup all had no file to read.
+
 ## What it is
 
 A replacement for Photo Booth. It puts the iPhone camera interface on macOS —
