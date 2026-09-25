@@ -44,10 +44,10 @@ brew install --cask yusufdiallo1/tap/aperture
 
 | | |
 | --- | --- |
-| **55** Swift files, **14,018** lines | no third-party dependencies |
-| **340** engine tests | against real files, not mocks |
+| **59** Swift files, **14,993** lines | no third-party dependencies |
+| **381** engine tests | against real files, not mocks |
 | **31** artifact checks | on every build |
-| **9.9 MB** download | macOS 14+, Apple silicon |
+| **10 MB** download | macOS 14+, Apple silicon |
 | **1** outbound request | a daily version check you can switch off |
 
 ## Tech stack
@@ -156,6 +156,8 @@ of the app's network behaviour.
 | **iPhone** | Use it as the camera over Continuity, when macOS offers it |
 | **Appearance** | Light, dark, or follow the system — panels and all |
 | **Timer** | 3, 5, 7, 10 or 15 seconds, counted down on screen |
+| **Updates** | Checked daily, installed in place — no downloading or dragging |
+| **Feedback** | Help › Report an Issue, with a screenshot, kept on your Mac |
 | **Navigation** | Across the top, or a frosted pill you drag where you like |
 | **Styles** | Five photographic styles, applied before any filter |
 | **Night Mode** | Shadow recovery for a dim room, at two strengths |
