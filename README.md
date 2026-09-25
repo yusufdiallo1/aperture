@@ -64,17 +64,19 @@ of the app's network behaviour.
 | **Burst** | Turn it on in the control sheet, then hold the shutter |
 | **Live Photos** | A still plus the moment around it |
 | **Screen** | Whole display or a single window, with system audio |
-| **Effects** | 23 across five groups, live in the viewfinder |
+| **Effects** | 21 across five groups, live in the viewfinder |
 | **Editing** | Crop, rotate, grade, trim, clean up speech — all non-destructive |
 | **Storage** | Straight into Photos, add-only permission |
 | **Profiles** | Several people per Mac, no server, no passwords |
 | **Shortcuts** | ⌥⌘C to capture, ⌥⌘R for the recorder, from anywhere |
 | **iPhone** | Use it as the camera over Continuity, when macOS offers it |
+| **Appearance** | Light, dark, or follow the system — panels and all |
+| **Timer** | 3, 5, 7, 10 or 15 seconds, counted down on screen |
 | **Navigation** | Across the top, or a frosted pill you drag where you like |
 | **Styles** | Five photographic styles, applied before any filter |
 | **Night Mode** | Shadow recovery for a dim room, at two strengths |
 | **Aspect** | 4:3, 16:9 or 1:1, matched by the viewfinder |
-| **Zoom** | 1× to 7×, with the long end marked for what it costs |
+| **Zoom** | Stops at 1×, 2×, 4× and 8× — hold one and drag to slide between them |
 
 > **Widgets are not in this build, and cannot be without a paid Apple
 > Developer account.** macOS will not register a widget extension that has no
@@ -200,12 +202,13 @@ fighting. The button cycles them and shows which is active.
 two compose, and the viewfinder is held to the same ratio — what you frame is
 what gets written.
 
-**Zoom** runs 1× to 7×. These are digital crops: a single fixed-focal-length
-webcam has no optical zoom, and `.5×` is absent because cropping cannot widen a
-field of view. Past the point where the sensor still has detail — derived from
-its real width, not assumed — the long stops are drawn dimmer and say so on
-hover. They are offered because framing a distant subject is sometimes worth
-the softness, not because the detail is there.
+**Zoom** has stops at 1×, 2×, 4× and 8×; hold one and drag to slide between
+them. These are digital crops: a single fixed-focal-length webcam has no
+optical zoom, and `.5×` is absent because cropping cannot widen a field of
+view. Past the point where the sensor still has detail — derived from its real
+width, not assumed — the long stops are drawn dimmer. They are offered because
+framing a distant subject is sometimes worth the softness, not because the
+detail is there.
 
 ## Screen recording
 
