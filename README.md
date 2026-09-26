@@ -131,14 +131,22 @@ mode carousel, control cluster, filters, the lot — and adds the things a Mac
 camera app actually needs: screen recording, an editor, and direct saving to
 your Photos library.
 
-Everything runs on your machine. **No account, no server, no telemetry.** Your
-captures, profiles and settings never leave the Mac, and nothing about how you
-use the app is collected or transmitted.
+Everything runs on your machine. **No account, no telemetry.** Your captures,
+profiles and settings never leave the Mac, and nothing about how you use the
+app is collected or transmitted.
 
-There is exactly one outbound request: a daily check against a public GitHub
-file to see whether a newer version exists. It sends no identifiers and nothing
-about you, and **Settings → Check for updates** turns it off. That is the whole
-of the app's network behaviour.
+The app makes network requests in three places, all of them things you start:
+
+- A **daily version check** against a public GitHub file. It sends no
+  identifiers and nothing about you; **Settings → Check for updates** turns it
+  off.
+- **Help › Report an Issue**, which sends what you typed — name, email,
+  description — plus any screenshot you attached and the app and OS version,
+  so a report can be acted on. It goes nowhere unless you press Send.
+- **AI features**, when you use one, which send the text for that request.
+
+Your photos and videos are never sent anywhere. They are saved to
+`~/Pictures/Aperture` and your Photos library, and nothing else reads them.
 
 ## At a glance
 
